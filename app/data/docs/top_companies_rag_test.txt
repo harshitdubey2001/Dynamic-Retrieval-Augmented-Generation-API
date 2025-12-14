@@ -1,0 +1,93 @@
+TOP COMPANIES DATASET FOR RAG TESTING (2025)
+
+1. OpenAI
+Industry: Artificial Intelligence
+Founded: 2015
+Headquarters: San Francisco, USA
+Description: OpenAI develops large language models such as GPT-4 and GPT-5, focusing on safe and scalable artificial general intelligence.
+
+2. Google (Alphabet Inc.)
+Industry: Technology / Internet Services
+Founded: 1998
+Headquarters: Mountain View, USA
+Description: Google is a global leader in search, cloud computing, AI research (DeepMind), and digital advertising.
+
+3. Microsoft
+Industry: Technology / Cloud Computing
+Founded: 1975
+Headquarters: Redmond, USA
+Description: Microsoft provides Windows OS, Azure cloud services, GitHub, and enterprise AI solutions integrated with OpenAI models.
+
+4. Amazon (AWS)
+Industry: E-commerce / Cloud Computing
+Founded: 1994
+Headquarters: Seattle, USA
+Description: Amazon Web Services (AWS) is the largest cloud provider, offering scalable infrastructure and AI/ML services.
+
+5. Meta (Facebook)
+Industry: Social Media / AI
+Founded: 2004
+Headquarters: Menlo Park, USA
+Description: Meta focuses on social platforms like Facebook, Instagram, and AI research including LLaMA models.
+
+6. NVIDIA
+Industry: Semiconductors / AI Hardware
+Founded: 1993
+Headquarters: Santa Clara, USA
+Description: NVIDIA designs GPUs widely used for AI training and inference, including H100 and Blackwell architectures.
+
+7. Apple
+Industry: Consumer Electronics
+Founded: 1976
+Headquarters: Cupertino, USA
+Description: Apple designs iPhones, Macs, and privacy-focused AI features integrated into its ecosystem.
+
+8. Tesla
+Industry: Automotive / AI
+Founded: 2003
+Headquarters: Austin, USA
+Description: Tesla develops electric vehicles, autonomous driving software, and the Dojo AI supercomputer.
+
+9. IBM
+Industry: Enterprise Technology
+Founded: 1911
+Headquarters: Armonk, USA
+Description: IBM provides enterprise AI solutions, hybrid cloud, and Watson-based services.
+
+10. Intel
+Industry: Semiconductors
+Founded: 1968
+Headquarters: Santa Clara, USA
+Description: Intel manufactures CPUs and AI accelerators used in servers, PCs, and edge computing.
+
+11. Samsung
+Industry: Electronics / Semiconductors
+Founded: 1938
+Headquarters: Seoul, South Korea
+Description: Samsung is a global leader in memory chips, smartphones, and display technology.
+
+12. Tata Consultancy Services (TCS)
+Industry: IT Services
+Founded: 1968
+Headquarters: Mumbai, India
+Description: TCS is one of the largest IT services companies, providing consulting, cloud, and AI-driven solutions.
+
+13. Infosys
+Industry: IT Services
+Founded: 1981
+Headquarters: Bengaluru, India
+Description: Infosys delivers digital transformation, AI platforms, and enterprise software services.
+
+14. Reliance Industries
+Industry: Conglomerate
+Founded: 1966
+Headquarters: Mumbai, India
+Description: Reliance operates in telecom (Jio), retail, energy, and digital services.
+
+15. Flipkart
+Industry: E-commerce
+Founded: 2007
+Headquarters: Bengaluru, India
+Description: Flipkart is a leading Indian e-commerce platform, owned by Walmart.
+
+This dataset is intentionally multi-domain to test retrieval, chunking, and reranking in RAG systems.
