@@ -29,43 +29,40 @@ class RAGCHAIN:
         self.reranker = BGECrossEncoder()
         
 
-    def run(self,question:str):
-        docs = self.retriever._get_relevant_documents(question,run_manager=None)
+    def run(self, question: str):
+        docs = self.retriever.invoke(question)
 
-        reranked_docs = self.reranker.rerank(question,docs)
+        if not docs:
+            return "Not found in document"
 
-        context = "\n\n".join([d.page_content for d in reranked_docs])
+        # Optional reranking
+        reranked_docs = self.reranker.rerank(question, docs)
 
-        if len(context.strip()) < 50:
-           return "Not found in document"
-        
-        from app.evaluation.relevance import relevance_score
-        sim = relevance_score(question, context)
+        if not reranked_docs:
+            return "Not found in document"
 
-        ABSTRACT_TRIGGERS = (
-                "what types",
-                "what kind",
-                "what categories",
-                "summarize",
-                "overview",
-                "describe"
-            )
+        context = "\n\n".join(d.page_content for d in reranked_docs)
 
-        is_abstract = any(t in question.lower() for t in ABSTRACT_TRIGGERS)
-
-        if not is_abstract and sim < 0.35:
-                return "Not found in document"
-
-        prompt = PROMPT_TEMPLATE.format(context=context,question=question)
-
+        prompt = PROMPT_TEMPLATE.format(
+            context=context,
+            question=question
+        )
 
         raw = self.llm.invoke(prompt)
 
-        if isinstance(raw,list):
+        if hasattr(raw, "content"):
+            answer = raw.content
+        elif isinstance(raw, list):
             answer = raw[0].get("generated_text", "")
         else:
-            answer = str(raw)    
+            answer = str(raw)
 
-        return answer.strip()
-    
+        answer = answer.strip()
+
+        if not answer:
+            return "Not found in document"
+
+        return answer
+
+
     
