@@ -1,115 +1,73 @@
----
-title: Dynamic RAG API
-emoji: 🚀
-colorFrom: blue
-colorTo: purple
-sdk: docker
-app_port: 7860
----
+# Dynamic Retrieval-Augmented Generation API
 
-
-
-
-
-# RAG System (v1.0)
-
-A **production-oriented Retrieval-Augmented Generation (RAG) system** that answers questions **strictly grounded in provided documents**, with dynamic hallucination control and FastAPI deployment.
-
-This project focuses on **correct RAG behavior** (grounded answers + refusal for out-of-scope queries), not chatbot-style guessing.
+A **versioned, production-grade Retrieval-Augmented Generation (RAG) system**
+that evolves from **text-only RAG** to a **Hybrid RAG (Text + Image OCR)** architecture.
 
 ---
 
-## 🚀 Features
+## 📌 Versions Overview
 
-- 📄 Document ingestion from local files (TXT / PDF / Web-ready)
-- 🔍 Vector search using **FAISS**
-- 🧠 **Cross-encoder reranking** for improved retrieval quality
-- 🚫 **Dynamic refusal** of out-of-scope questions (hallucination control)
-- 📊 Evaluation with **relevance** and **faithfulness** metrics
-- ⚡ **FastAPI backend** for serving RAG as an API
-- 🔁 **Dataset-agnostic** (no hardcoded domain logic)
+| Version | Description |
+|------|-------------|
+| **v1** | Basic text-only RAG |
+| **v1.1** | Improved chunking & retrieval |
+| **v1.2** | Performance & API refinements |
+| **v2.0.0** | 🚀 Hybrid RAG (Text + Image OCR, Query Expansion) |
 
 ---
 
-## 🧱 High-Level Architecture
+## 🚀 What’s New in v2.0.0
 
-```
+- Hybrid RAG (Text + Image)
+- OCR-based image ingestion (EasyOCR, GPU supported)
+- Unified vector database (text + image knowledge)
+- Query expansion for better recall
+- Context-aware prompting
+- Strict grounding (no hallucinations)
+- FastAPI backend
+
+---
+
+## 🧠 Architecture
+
+Text Files ─┐
+            ├── Chunking → Embeddings → Vector DB
+Images ─OCR─┘
+
 User Query
    ↓
-Retriever (FAISS)
+Query Expansion
    ↓
-Reranker (Cross-Encoder)
+Retriever
    ↓
-Semantic Relevance Gate
+Context-Aware Prompt
    ↓
-LLM (Answer Generation)
-```
-
-If the retrieved context is insufficient or irrelevant, the system **refuses to answer** instead of hallucinating.
+LLM Answer
 
 ---
 
-## 📡 API Endpoints
+## 🧪 Example API Usage
 
-### Health Check
-```
-GET /health
+Request:
+```json
+{
+  "question": "Tell me about GPT"
+}
 ```
 
 Response:
 ```json
-{ "status": "ok" }
-```
-
----
-
-### Query RAG
-```
-POST /query
-```
-
-**Request**
-```json
 {
-  "question": "Name some companies mentioned in the document"
+  "answer": "GPT stands for Generative Pre-trained Transformer..."
 }
 ```
 
-**Response (in-scope query)**
-```json
-{
-  "answer": "Samsung, TCS, Infosys, Reliance, Apple, Tesla, IBM, Intel, Amazon, Meta, NVIDIA."
-}
+Out-of-scope queries return:
 ```
-
-**Response (out-of-scope query)**
-```json
-{
-  "answer": "Not found in document"
-}
+Not found in document.
 ```
-
----
-
-## 🗂 Project Structure
-
 ```
-RAG-SYSTEM/
-├── app/
-│   ├── api.py            # FastAPI routes
-│   ├── rag_chain.py      # Core RAG orchestration
-│   ├── retriever.py      # Document loading + FAISS
-│   ├── reranker.py       # Cross-encoder reranker
-│   ├── llm.py            # LLM loading & inference
-│   ├── evaluation/       # Relevance & faithfulness metrics
-│   └── data/docs/        # Knowledge base (TXT / PDF files)
-│
-├── main.py               # API entrypoint
-├── requirements.txt
-└── README.md
 ```
-
----
 
 ## ▶️ Running Locally
 
@@ -134,50 +92,33 @@ http://127.0.0.1:8000/docs
 ```
 
 ---
-
-## 📊 Evaluation Philosophy
-
-- **Relevance**: Measures semantic alignment between question and retrieved context
-- **Faithfulness**: Measures how much of the answer is supported by the context
-
-Low faithfulness scores for abstract or summarized answers are expected and do **not** necessarily indicate hallucination.
-
-The primary correctness signal is **dataset-grounded refusal** for unsupported queries.
-
 ---
 
-## 🛠 Tech Stack
 
-- Python
-- LangChain
-- FAISS
-- Hugging Face Transformers
-- Sentence-Transformers
-- PyTorch
+## ⚙️ Tech Stack
+
 - FastAPI
+- LangChain
+- Astra DB / Cassandra
+- EasyOCR (GPU)
+- HuggingFace BGE
+- Groq LLaMA
 
 ---
-
 ## 📦 Versioning
 
 - **v1.0** — Text-only RAG with FastAPI deployment
-- **v1.1 (planned)** — Persistent FAISS index (save/load)
-- **v1.2 (planned)** — Dockerized deployment
-- **v2.0 (planned)** — Multimodal RAG (text + images)
+- **v1.1 (done)** — Persistent FAISS index (save/load)
+- **v1.2 (done)** — Dockerized deployment
+- **v2.0 (done)** — Multimodal RAG (text + images)
 
 ---
 
 ## 📜 License
-
-MIT License
-
----
-
-## 🧠 Notes
+MIT
 
 This project intentionally prioritizes **correct RAG behavior** over conversational fluency:
 - The system answers **only when evidence exists**
 - Otherwise, it explicitly refuses
 
 This design mirrors real-world, production RAG systems used for enterprise and knowledge-grounded applications.
-
