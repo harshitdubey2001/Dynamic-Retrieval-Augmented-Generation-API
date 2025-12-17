@@ -1,0 +1,3 @@
+{
+  "C:\\Users\\harsh\\LangChain\\RAG_SYSTEM_v2\\data\\images\\Advanced-RAG.png": "Chunking\n3\nIndexing\nDocuments\nE\nChunks\nVectorize\n[\nEmbedding\nModel\nIndexing\nVectorize\nSearch\nNode 1\nUser\nQuery\nNode 2\n8\nNode 3\nRetrieve\n1\nRelevant\nGenerate\nContexts\nQuery\nPrompt\nResponse\nLLM\nAugment"
+}

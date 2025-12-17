@@ -1,0 +1,49 @@
+# Artificial Intelligence & Technology Overview
+
+Artificial Intelligence (AI) is a branch of computer science focused on creating systems capable of performing tasks that normally require human intelligence. These tasks include reasoning, learning, problem-solving, perception, and language understanding.
+
+## Major AI Companies
+
+OpenAI is an artificial intelligence research organization best known for developing the GPT (Generative Pre-trained Transformer) series of models, including GPT-3, GPT-4, and GPT-5. These models are widely used for chatbots, code generation, summarization, and reasoning tasks.
+
+Microsoft is a multinational technology company closely associated with the Windows operating system. Microsoft has also partnered with OpenAI and integrates AI technologies into products like Microsoft Azure, Copilot, and Office 365.
+
+Google is a global technology leader that developed the Transformer architecture, which forms the basis of modern large language models. Google’s AI research division is known as DeepMind.
+
+Meta (formerly Facebook) focuses on open-source AI development and created models like LLaMA. Meta applies AI heavily in social media, recommendation systems, and virtual reality.
+
+## Operating Systems
+
+Windows is an operating system developed by Microsoft. It is widely used on personal computers and laptops around the world.
+
+Linux is an open-source operating system commonly used on servers, cloud infrastructure, and development environments.
+
+macOS is an operating system developed by Apple for Macintosh computers.
+
+## Cloud & Infrastructure
+
+Amazon Web Services (AWS) is a cloud computing platform provided by Amazon. It offers services such as virtual servers, databases, storage, and machine learning tools.
+
+Microsoft Azure is a cloud platform offering AI services, virtual machines, and enterprise solutions.
+
+Google Cloud Platform (GCP) provides cloud computing services with strong AI and data analytics capabilities.
+
+## AI Concepts
+
+Large Language Models (LLMs) are AI models trained on vast amounts of text data. Examples include GPT models, Gemini, Claude, and LLaMA.
+
+Retrieval-Augmented Generation (RAG) is a technique that combines document retrieval with text generation to produce more accurate and grounded responses.
+
+A reranker is often used in RAG systems to reorder retrieved documents based on relevance before sending them to the language model.
+
+Embeddings convert text into numerical vectors that allow semantic similarity search.
+
+## Miscellaneous Facts
+
+Python is the most popular programming language for AI and machine learning.
+
+FAISS is a library used for efficient similarity search in vector databases.
+
+Cohere provides APIs for embeddings and reranking models.
+
+Hybrid search combines keyword-based search with vector-based semantic search.
