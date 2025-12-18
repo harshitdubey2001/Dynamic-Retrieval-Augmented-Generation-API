@@ -9,3 +9,6 @@ cassio
 cassandra-driver
 python-dotenv
 groq
+easyocr
+PyMuPDF
+

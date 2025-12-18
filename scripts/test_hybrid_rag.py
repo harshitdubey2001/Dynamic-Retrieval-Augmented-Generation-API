@@ -3,7 +3,7 @@ from app.hybrid_rag import HybridRAG
 def main():
     rag = HybridRAG()
 
-    question = "Tell me about GPT"
+    question = "How to Manually Redeem Authorization Code "
 
     answer = rag.run(question)
 
