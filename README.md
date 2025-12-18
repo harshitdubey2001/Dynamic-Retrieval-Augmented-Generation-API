@@ -13,6 +13,7 @@ that evolves from **text-only RAG** to a **Hybrid RAG (Text + Image OCR)** archi
 | **v1.1** | Improved chunking & retrieval |
 | **v1.2** | Performance & API refinements |
 | **v2.0.0** | 🚀 Hybrid RAG (Text + Image OCR, Query Expansion) |
+| **v2.1.0** | 🚀 Hybrid RAG (Text + Image OCR + PDF, Query Expansion) |
 
 ---
 
@@ -20,7 +21,7 @@ that evolves from **text-only RAG** to a **Hybrid RAG (Text + Image OCR)** archi
 
 - Hybrid RAG (Text + Image)
 - OCR-based image ingestion (EasyOCR, GPU supported)
-- Unified vector database (text + image knowledge)
+- Unified vector database (text + image knowledge + PDF)
 - Query expansion for better recall
 - Context-aware prompting
 - Strict grounding (no hallucinations)
@@ -31,7 +32,7 @@ that evolves from **text-only RAG** to a **Hybrid RAG (Text + Image OCR)** archi
 ## 🧠 Architecture
 
 Text Files ─┐
-            ├── Chunking → Embeddings → Vector DB
+PDF Files----├── Chunking → Embeddings → Vector DB
 Images ─OCR─┘
 
 User Query
@@ -111,6 +112,7 @@ http://127.0.0.1:8000/docs
 - **v1.1 (done)** — Persistent FAISS index (save/load)
 - **v1.2 (done)** — Dockerized deployment
 - **v2.0 (done)** — Multimodal RAG (text + images)
+- **v2.1 (done)** — Multimodal RAG (text + images + PDFs)
 
 ---
 
