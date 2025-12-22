@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import List, Optional
 
 from app.hybrid_rag import HybridRAG
 
@@ -14,13 +15,21 @@ rag = HybridRAG()
 class QueryRequest(BaseModel):
     question:str
 
+class Source(BaseModel):
+    file: Optional[str]
+    page: Optional[int]
+    modality: Optional[str]    
+
 class QueryResponse(BaseModel):
     answer:str
+    sources: List[Source]
 
-@app.post("/query",response_model=QueryResponse)
-def query(req:QueryRequest):
 
+    
+
+
+@app.post("/query", response_model=QueryResponse)
+def query(req: QueryRequest):
     result = rag.run(req.question)
-
-    return QueryResponse(**result)
+    return result
 

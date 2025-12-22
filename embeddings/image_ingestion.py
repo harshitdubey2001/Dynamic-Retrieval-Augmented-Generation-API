@@ -25,8 +25,10 @@ def ingest_image(image_path):
     return Document(
     page_content=text,
     metadata={
-        "source": image_path,
-        "filename": os.path.basename(image_path),
+        "file_name": os.path.basename(image_path),
+        "page": None,
+        "source_type": "image",
+        "image_path": key, 
         "modality": "image"
     }
 )       

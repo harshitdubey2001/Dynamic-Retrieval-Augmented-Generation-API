@@ -7,3 +7,16 @@ __pycache__/
 venv/
 LCvenv/
 data/
+data/pdf_images/
+cache/ingestion_registry.json
+cache/image_cache.json
+cache
+**/ingestion_registry.json
+**/image_cache.json
+
+# generated images
+data/pdf_images/
+
+# python
+__pycache__/
+*.pyc
